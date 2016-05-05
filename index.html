@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Overview AngularJS</title>
+    <meta lang="pt-br" />
+    <meta charset="utf-8" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<!-- Aqui definimos o módulo principal da nossa aplicação -->
+<body ng-app="aplicacaoExemplo">
+    <header class="navbar navbar-fixed navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">AngularJS</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/">Clientes</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- ngView é uma diretiva do AngularJS, que é utilizada na view principal para renderizar os layouts da aplicação. -->
+    <section ng-view></section>
+
+    <!-- Script padrão do AngularJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <!-- Script para utilizarmos as rotas do AngularJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
+
+    <!-- Scripts da Aplicação -->
+    <script src="modulos/app.js"></script>
+    <script src="modulos/config-route.js"></script>
+    <script src="componentes/tabela/tabelaDiretiva.js"></script>
+    <script src="modulos/cliente/clienteServico.js"></script>
+    <script src="modulos/cliente/clienteController.js"></script>
+</body>
+</html>

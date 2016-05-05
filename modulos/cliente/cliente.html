@@ -1,0 +1,25 @@
+﻿<div class="container">
+    <fieldset class="form-group">
+        <legend>Cliente selecionado</legend>
+        <div class="row">
+            <div class="form-group col-lg-8 col-md-8 col-xs-8">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" ng-model="vm.cliente.nome" class="form-control" />
+            </div>
+            <div class="form-group col-lg-4 col-md-4 col-xs-4">
+                <label for="idade">Idade</label>
+                <input id="idade" type="number" ng-model="vm.cliente.idade" class="form-control" />
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <button type="button" class="btn btn-warning pull-right" ng-click="vm.cancelar()">Cancelar</button>
+                <button type="button" class="btn btn-success pull-right" ng-if="!vm.alterarVisivel" ng-click="vm.incluirCliente(vm.cliente)">Incluir</button>
+                <button type="button" class="btn btn-danger pull-right" ng-if="vm.alterarVisivel" ng-click="vm.excluirCliente(vm.cliente)">Excluir</button>
+                <button type="button" class="btn btn-primary pull-right" ng-if="vm.alterarVisivel" ng-click="vm.alterarCliente(vm.cliente)">Alterar</button>
+            </div>
+        </div>
+    </fieldset>
+    <div class="row">
+        <nt-tabela ng-if="vm.listaClientes.length > 0" class="col-lg-12 col-md-12 col-xs-12" datasource="vm.listaClientes" dados="vm.cliente" alterar="vm.alterarVisivel"></nt-tabela>
+    </div>
+</div>
